@@ -1,6 +1,6 @@
 package model;
 
-import model.Couleur;
+
 
 public abstract class AbstractPiece {
 	
@@ -14,11 +14,31 @@ public abstract class AbstractPiece {
 		this.couleur=couleur;
 	}
 	
-	public AbstractPiece(Couleur couleur) {
-		this(couleur,new Coord(0,0));
+	public int getX() {
+		return 1;
 	}
 	
-	public AbstractPiece() {
-		this(Couleur.NOIRBLANC);
+	public int getY() {
+		return 1;
 	}
+	
+	public Couleur getCouleur() {
+		return this.couleur;
+	}
+	
+	public boolean move() {
+		return true;
+	}
+	
+	public boolean capture() {
+		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return null;
+	}
+	
+	public abstract boolean isMoveOk(int xFinal, int yFinal);
+	
 }
