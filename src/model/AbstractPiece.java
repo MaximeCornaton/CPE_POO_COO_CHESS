@@ -6,7 +6,7 @@ public abstract class AbstractPiece {
 	
  
 	
-	private Coord coord;
+	protected Coord coord;
 	private Couleur couleur;
 
 	public AbstractPiece(Couleur couleur, Coord coord) {
