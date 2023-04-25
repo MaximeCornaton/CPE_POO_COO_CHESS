@@ -76,8 +76,8 @@ public class Jeu {
 	protected boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
 		boolean isMoveOk = false;
 		
-		if(isPieceHere(xInit,yInit)) {
-			isMoveOk = 
+		if(isPieceHere(xInit,yInit) && !isPieceHere(xFinal,yFinal)) {
+			isMoveOk = findPiece(xInit,yInit).isMoveOk(xFinal, yFinal);
 		}
 		
 		return isMoveOk;
