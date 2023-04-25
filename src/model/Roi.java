@@ -2,7 +2,7 @@ package model;
 
 public class Roi extends AbstractPiece{
 	
-	private Roi(Couleur couleur, Coord coord) {
+	protected Roi(Couleur couleur, Coord coord) {
 		super(couleur,coord);
 		
 	}
