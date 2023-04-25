@@ -15,7 +15,7 @@ public abstract class AbstractPiece {
 	}
 
 	public AbstractPiece(Couleur couleur) {
-		super(couleur, new Coord(0,0));
+		this(couleur, new Coord(0,0));
 		
 	}
 	
