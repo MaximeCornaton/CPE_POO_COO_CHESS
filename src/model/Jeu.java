@@ -18,7 +18,7 @@ public class Jeu {
 	 * Le constructeur de jeu fait appel à la fabrique de pièces
 	 * @param color
 	 */
-	public Jeu(Couleur couleur) {
+	protected Jeu(Couleur couleur) {
 		this.couleur = couleur;
 		this.Pieces = tools.ChessPiecesFactory.newPieces(couleur);
 	}
@@ -28,13 +28,12 @@ public class Jeu {
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("Jeu [couleur="+ couleur).append(", Pieces=");
 	    for (Pieces piece : Pieces) {
-	        sb.append(piece+", ");
+	        sb.append(piece.toString()+", ");
 	    }
 	    sb.setLength(sb.length() - 2);
 	    sb.append("]");
 	    return sb.toString();
 	}
-	
 	
 	/**
 	 * @param args
