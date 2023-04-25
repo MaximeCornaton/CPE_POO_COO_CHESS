@@ -53,7 +53,7 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	}
 	
 	public boolean isMoveOk(int xFinal, int yFinal) {
-		if (0<= xFinal || xFinal <=7 && 0<= yFinal || yFinal <=7) {
+		if (0<= xFinal && xFinal <=7 && 0<= yFinal && yFinal <=7) {
 			return true ;
 		}
 		else {
