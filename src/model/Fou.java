@@ -1,7 +1,7 @@
 package model;
 
 public class Fou extends AbstractPiece{
-	protected Fou(Couleur couleur, Coord coord) {
+	public Fou(Couleur couleur, Coord coord) {
 		super(couleur,coord);
 	}
 
