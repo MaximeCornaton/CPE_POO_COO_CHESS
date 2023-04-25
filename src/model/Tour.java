@@ -10,7 +10,7 @@ public class Tour extends AbstractPiece{
 
 
 	public boolean isMoveOk(int xFinal, int yFinal) {
-		return (xFinal >= 0 && yFinal >= 0 && xFinal != this.coord.x && yFinal == this.coord.y || xFinal == this.coord.x && yFinal != this.coord.y);
+		return (xFinal >= 0 && yFinal >= 0 && xFinal != this.getX() && yFinal == this.getY() || xFinal == this.getX() && yFinal != this.getY());
 	}
 	
 
@@ -21,6 +21,20 @@ public class Tour extends AbstractPiece{
 		
 		System.out.println(a);
 		
+	}
+
+
+	@Override
+	public boolean capture() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean move(int xFinal, int yFinal) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
