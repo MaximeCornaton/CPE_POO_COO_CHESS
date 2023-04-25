@@ -7,7 +7,7 @@ public class Echiquier implements BoardGames{
 	private Jeu non_courant;
 	
 	
-	private Echiquier() {
+	protected Echiquier() {
 		this.blanc = new Jeu(Couleur.BLANC);
 		this.noir = new Jeu(Couleur.NOIR);
 		this.courant = this.blanc;
@@ -22,6 +22,26 @@ public class Echiquier implements BoardGames{
 	 * @return Permet de vérifier si une pièce peut être déplacé
 	 */
 	private boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
+		boolean res = true;
+		
+		// Bonne exemple SRP
+		if (!(0<= xFinal && xFinal <=7 && 0<= yFinal && yFinal <=7) || 
+				this.courant.findPiece(xFinal, yFinal) != null 
+				
+				
+				){
+			res = false ;
+			
+		}
+		if(this.courant.findPiece(xFinal, yFinal) != null) {
+			if (this.courant.findPiece(xFinal, yFinal).getCouleur() == this.courant.getCouleur()) {
+				res = false;
+			}
+		}
+		
+		
+		
+		return res;
 		
 	}
 
