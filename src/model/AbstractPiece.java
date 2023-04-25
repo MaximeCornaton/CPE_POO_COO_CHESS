@@ -33,7 +33,6 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	}
 	
 	public boolean move(int x, int y) {
-		//TODO vérifier si la case est occupée ou non
 		boolean res=false;
 		if (this.isMoveOk(x, y)){
 			this.coord.x = x;
@@ -53,8 +52,9 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 		if (!this.isCaptured()) {
 			this.coord.x=-1;
 			this.coord.y=-1;
-			res = true
+			res = true;
 		}
+		return res;
 	}
 	
 	
