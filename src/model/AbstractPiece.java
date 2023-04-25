@@ -15,11 +15,11 @@ public abstract class AbstractPiece {
 	}
 	
 	public int getX() {
-		return 1;
+		return this.coord.x;
 	}
 	
 	public int getY() {
-		return 1;
+		return this.coord.y;
 	}
 	
 	public Couleur getCouleur() {
