@@ -13,6 +13,7 @@ public class Jeu {
 	
 	private Couleur couleur;
 	private List<Pieces> pieces;
+	private 
 	
 	/**
 	 * Le constructeur de jeu fait appel à la fabrique de pièces
@@ -138,8 +139,7 @@ public class Jeu {
 	 * @return type de la pi�ce aux coordonn�es x,y c'est � dire le nom de la classe : maPiece.getClass().getSimpleName();
 	 */
 	protected String getPieceType(int x, int y){
-		//TODO
-		return "oui";
+		findPiece(x,y).getClass().getSimpleName();
 	}
 	
 	
