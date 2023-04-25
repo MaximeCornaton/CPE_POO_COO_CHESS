@@ -12,7 +12,7 @@ import java.util.List;
 public class Jeu {
 	
 	private Couleur couleur;
-	private List<Pieces> Pieces;
+	private List<Pieces> pieces;
 	
 	/**
 	 * Le constructeur de jeu fait appel à la fabrique de pièces
@@ -20,19 +20,29 @@ public class Jeu {
 	 */
 	protected Jeu(Couleur couleur) {
 		this.couleur = couleur;
-		this.Pieces = tools.ChessPiecesFactory.newPieces(couleur);
+		this.pieces = tools.ChessPiecesFactory.newPieces(couleur);
 	}
 
 	@Override
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("Jeu [couleur="+ couleur).append(", Pieces=");
-	    for (Pieces piece : Pieces) {
+	    for (Pieces piece : pieces) {
 	        sb.append(piece.toString()+", ");
 	    }
 	    sb.setLength(sb.length() - 2);
 	    sb.append("]");
 	    return sb.toString();
+	}
+	
+	protected Pieces findPiece(int x, int y) {
+		Pieces finded = null;
+	    for (Pieces piece : pieces) {
+	        if (piece.getX() == x && piece.getY() == y) {
+	        	finded = piece;
+	        }
+	    }
+	    return finded;
 	}
 	
 	/**
