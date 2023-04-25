@@ -2,10 +2,14 @@ package model;
 
 
 public class Tour extends AbstractPiece{
-	
+	/**
+	 * 
+	 * @param couleur
+	 * @param coord
+	 */
 	public Tour(Couleur couleur, Coord coord) {
 		super(couleur, coord);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -15,7 +19,7 @@ public class Tour extends AbstractPiece{
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Tour a = new Tour(Couleur.NOIR, new Coord(0,0));
 		System.out.println(a.isMoveOk(0, 0));
 		
