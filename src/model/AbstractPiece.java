@@ -63,14 +63,7 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 		return this.getClass().getSimpleName() + " (" + this.getX() + ";" + this.getY() + ")";
 	}
 	
-	public boolean isMoveOk(int xFinal, int yFinal) {
-		if (0<= xFinal && xFinal <=7 && 0<= yFinal && yFinal <=7) {
-			return true ;
-		}
-		else {
-			return false;
-		}
-	}
+	public abstract boolean isMoveOk(int xFinal, int yFinal);
 	
 }
 	
