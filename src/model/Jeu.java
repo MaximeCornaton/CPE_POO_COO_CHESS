@@ -55,7 +55,14 @@ public class Jeu {
 	}
 	
 	
-	private Boolean isPieceHere(){
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @return true si une pièce se trouve aux coordonnées indiquées
+	 */
+	private Boolean isPieceHere(int x, int y){
+		return findPiece(x, y) != null;
 		
 	}
 	
