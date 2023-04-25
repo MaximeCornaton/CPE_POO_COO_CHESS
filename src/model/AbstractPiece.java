@@ -2,7 +2,7 @@ package model;
 
 
 
-public abstract class AbstractPiece {
+public abstract class AbstractPiece extends java.lang.Object implements Pieces  {
 	
  
 	
