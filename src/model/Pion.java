@@ -17,7 +17,7 @@ public class Pion extends AbstractPiece implements Pions {
 	
 	@Override
 	public boolean move(int x, int y) {
-		
+		return super.move(x,y);
 	}
 	
 	public static void main(String[] args) {

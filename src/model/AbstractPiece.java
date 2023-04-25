@@ -34,17 +34,27 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	
 	public boolean move(int x, int y) {
 		//TODO vérifier si la case est occupée ou non
+		boolean res=false;
 		if (this.isMoveOk(x, y)){
 			this.coord.x = x;
 			this.coord.y = y;
-			return true;
-		}else {
-			return false;
+			res = true;
 		}
+		return res;
+	}
+	
+	private boolean isCaptured() {
+		return (this.coord.x == -1 && this.coord.y == -1);
 	}
 	
 	public boolean capture() {
-		return true;
+		// Bien pour SRP: une piece ne peut agir que sur elle même.
+		boolean res = false;
+		if (!this.isCaptured()) {
+			this.coord.x=-1;
+			this.coord.y=-1;
+			res = true
+		}
 	}
 	
 	
