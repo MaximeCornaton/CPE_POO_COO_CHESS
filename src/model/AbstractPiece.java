@@ -6,7 +6,7 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	
  
 	
-	protected Coord coord;
+	private Coord coord;
 	private Couleur couleur;
 	
 	public AbstractPiece(Couleur couleur, Coord coord) {
@@ -20,6 +20,7 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	}
 	
 	public int getX() {
+		
 		return this.coord.x;
 	}
 	
