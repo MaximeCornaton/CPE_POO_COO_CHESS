@@ -44,7 +44,7 @@ public class Jeu {
 	 * @param y
 	 * @return Piece sur la case x, y
 	 */
-	protected Pieces findPiece(int x, int y) {
+	private Pieces findPiece(int x, int y) {
 		Pieces finded = null;
 	    for (Pieces piece : pieces) {
 	        if (piece.getX() == x && piece.getY() == y) {
@@ -53,7 +53,7 @@ public class Jeu {
 	    }
 	    return finded;
 	}
-	
+
 	
 	/**
 	 * 
@@ -65,6 +65,9 @@ public class Jeu {
 		return findPiece(x, y) != null;
 		
 	}
+	
+	
+	
 	
 	/**
 	 * @param args
