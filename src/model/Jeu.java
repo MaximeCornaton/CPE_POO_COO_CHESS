@@ -29,7 +29,7 @@ public class Jeu {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Jeu jeu = new Jeu(Couleur.BLANC);
 	}
 
 }
