@@ -31,11 +31,18 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 		return this.couleur;
 	}
 	
-	/**public boolean move() {
+	public boolean move(int x, int y) {
+		//TODO vérifier si la case est occupée ou non
+		if (this.isMoveOk(x, y)){
+			this.coord.x = x;
+			this.coord.y = y;
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
-	public boolean capture() {
-		
+	/*public boolean capture() {
 	}*/
 	
 	@Override
