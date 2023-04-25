@@ -22,6 +22,18 @@ public class Jeu {
 		this.couleur = couleur;
 		this.Pieces = tools.ChessPiecesFactory.newPieces(couleur);
 	}
+
+	@Override
+	public String toString() {
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("Jeu [couleur="+ couleur).append(", Pieces=");
+	    for (Pieces piece : Pieces) {
+	        sb.append(piece+", ");
+	    }
+	    sb.setLength(sb.length() - 2);
+	    sb.append("]");
+	    return sb.toString();
+	}
 	
 	
 	/**
