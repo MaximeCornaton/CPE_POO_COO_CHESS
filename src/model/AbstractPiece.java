@@ -42,8 +42,9 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 		}
 	}
 	
-	/*public boolean capture() {
-	}*/
+	public boolean capture() {
+		return true;
+	}
 	
 	@Override
 	public String toString() {
