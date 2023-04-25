@@ -11,8 +11,10 @@ import controler.controlerLocal.ChessGameControler;
  * @author francoise.perrin
  * Lance l'exécution d'un jeu d'échec en mode console.
  */
+@SuppressWarnings("deprecation")
 public class LauncherCmdLine {
 	
+
 	public static void main(String[] args) {		
 		
 		ChessGame model;
