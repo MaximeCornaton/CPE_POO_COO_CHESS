@@ -4,6 +4,7 @@
 package model;
 
 import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @author maxime
@@ -129,7 +130,7 @@ public class Jeu {
 	 */
 	protected Couleur getPieceColor(int x, int y) {
 		Couleur couleur = Couleur.NOIRBLANC;
-		if 
+		//TODO
 		
 		
 		return couleur;
@@ -154,6 +155,7 @@ public class Jeu {
 	protected Couleur getCouleur() {
 		return Couleur.BLANC;
 	}
+	
 	
 	/**
 	 * 
