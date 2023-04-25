@@ -44,7 +44,7 @@ public class Jeu {
 	 * @param y
 	 * @return Piece sur la case x, y
 	 */
-	private Pieces findPiece(int x, int y) {
+	protected Pieces findPiece(int x, int y) {
 		Pieces finded = null;
 	    for (Pieces piece : pieces) {
 	        if (piece.getX() == x && piece.getY() == y) {
@@ -74,10 +74,10 @@ public class Jeu {
 	 * @return true si piece du jeu peut être déplacée aux coordonnées finales, false sinon
 	 */
 	protected boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
-		boolean isMoveOk = true;
+		boolean isMoveOk = false;
 		
 		if(isPieceHere(xInit,yInit)) {
-			
+			isMoveOk = 
 		}
 		
 		return isMoveOk;
