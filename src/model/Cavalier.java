@@ -9,7 +9,5 @@ public class Cavalier extends AbstractPiece{
 	public boolean isMoveOk(int xFinal, int yFinal) {
 		return (Math.sqrt((xFinal-this.getX())^2 + (yFinal-this.getY())^2) == Math.sqrt(5));
 	}
-	
-	public 
 
 }
