@@ -22,7 +22,10 @@ public class Jeu {
 		this.couleur = couleur;
 		this.pieces = tools.ChessPiecesFactory.newPieces(couleur);
 	}
-
+	
+	/**
+	 * 
+	 */
 	@Override
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
@@ -35,6 +38,12 @@ public class Jeu {
 	    return sb.toString();
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @return Piece sur la case x, y
+	 */
 	protected Pieces findPiece(int x, int y) {
 		Pieces finded = null;
 	    for (Pieces piece : pieces) {
@@ -43,6 +52,11 @@ public class Jeu {
 	        }
 	    }
 	    return finded;
+	}
+	
+	
+	private Boolean isPieceHere(){
+		
 	}
 	
 	/**
