@@ -8,10 +8,15 @@ public abstract class AbstractPiece {
 	
 	protected Coord coord;
 	private Couleur couleur;
+	
+	public AbstractPiece(Couleur couleur, Coord coord) {
+		this.coord = coord;
+		this.couleur = couleur;
+	}
 
 	public AbstractPiece(Couleur couleur) {
-		this.coord = new Coord(0, 0);
-		this.couleur=couleur;
+		super(couleur, new Coord(0,0));
+		
 	}
 	
 	public int getX() {
