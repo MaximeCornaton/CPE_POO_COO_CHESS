@@ -18,5 +18,7 @@ public class Cavalier extends AbstractPiece{
 		System.out.println(c.isMoveOk(1, 2));
 		System.out.println(c);
 	}
+	
+	
 
 }
