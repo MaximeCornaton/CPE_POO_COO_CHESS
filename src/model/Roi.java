@@ -10,7 +10,7 @@ public class Roi extends AbstractPiece{
 	@Override
 	public boolean isMoveOk(int xFinal, int yFinal) {
 		// TODO Auto-generated method stub
-		return (Math.abs(yFinal - this.getY()) == 1 || Math.abs(xFinal) - this.getX() == 1 && super.isMoveOk(xFinal, yFinal));
+		return (Math.abs(yFinal - this.getY()) == 1 || Math.abs(xFinal) - this.getX() == 1);
 		
 	}
 	

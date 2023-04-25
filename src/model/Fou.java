@@ -22,7 +22,7 @@ public class Fou extends AbstractPiece{
 	@Override
 	public boolean isMoveOk(int xFinal, int yFinal) {
 		
-		return (Math.abs(yFinal - this.getY()) == Math.abs(xFinal) - this.getX() && super.isMoveOk(xFinal, yFinal));
+		return (Math.abs(yFinal - this.getY()) == Math.abs(xFinal) - this.getX());
 	
 	}
 	
