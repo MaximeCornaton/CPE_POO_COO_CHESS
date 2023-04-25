@@ -62,7 +62,6 @@ public class Jeu {
 	 */
 	protected Boolean isPieceHere(int x, int y){
 		return findPiece(x, y) != null;
-		
 	}
 	
 	/**
@@ -79,9 +78,7 @@ public class Jeu {
 		if(isPieceHere(xInit,yInit) && !isPieceHere(xFinal,yFinal)) {
 			isMoveOk = findPiece(xInit,yInit).isMoveOk(xFinal, yFinal);
 		}
-		
 		return isMoveOk;
-		
 	}
 	
 	/**
@@ -93,8 +90,12 @@ public class Jeu {
 	 * @return true si déplacement pièce effectué
 	 */
 	protected boolean move(int xInit, int yInit, int xFinal, int yFinal) {
-		//TODO 
-		return false;
+		boolean move=false;
+		if (isMoveOk(xInit,yInit,xFinal,yFinal)){
+			findPiece(xInit,yInit).move(xFinal, yFinal);
+			move = true;
+		}
+		return move;
 	}
 	
 	
