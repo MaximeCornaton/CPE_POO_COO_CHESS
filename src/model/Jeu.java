@@ -74,8 +74,13 @@ public class Jeu {
 	 * @return true si piece du jeu peut être déplacée aux coordonnées finales, false sinon
 	 */
 	protected boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
-		//TODO
-		return false;
+		boolean isMoveOk = true;
+		
+		if(isPieceHere(xInit,yInit)) {
+			
+		}
+		
+		return isMoveOk;
 		
 	}
 	
