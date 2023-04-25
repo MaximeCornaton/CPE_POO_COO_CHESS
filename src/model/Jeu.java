@@ -105,6 +105,7 @@ public class Jeu {
 	 */
 	protected void setPossibleCapture() {
 		//TODO
+		
 	}
 	
 	
@@ -127,8 +128,11 @@ public class Jeu {
 	 * @return couleur de la pièce aux coordonnées x, y
 	 */
 	protected Couleur getPieceColor(int x, int y) {
-		//TODO 
-		return Couleur.BLANC;
+		Couleur couleur = Couleur.NOIRBLANC;
+		if 
+		
+		
+		return couleur;
 	}
 	
 	
@@ -139,7 +143,7 @@ public class Jeu {
 	 * @return type de la pi�ce aux coordonn�es x,y c'est � dire le nom de la classe : maPiece.getClass().getSimpleName();
 	 */
 	protected String getPieceType(int x, int y){
-		findPiece(x,y).getClass().getSimpleName();
+		return findPiece(x,y).getClass().getSimpleName();
 	}
 	
 	
@@ -155,8 +159,32 @@ public class Jeu {
 	 * 
 	 * @return une vue de la liste des pièces en cours ne donnant que des accès en lecture sur des PieceIHM (type piece + couleur + liste de coordonnées)
 	 */
-	protected List<PieceIHM> getPiecesIHM(){
-		//TODO
+	public List<PieceIHM> getPiecesIHM() {
+			PieceIHM newPieceIHM = null;
+			List<PieceIHM> list = new LinkedList<PieceIHM>();
+			
+			for (Pieces piece : pieces) {
+				boolean existe = false;
+				// si le type de piece existe déjà dans la liste de PieceIHM // ajout des coordonnées de la pièce dans la liste de Coord de ce type
+				// si elle est toufours en jeu (x et y != -1)
+				for ( PieceIHM pieceIHM : list) {
+					if ((pieceIHM.getTypePiece()).equals(piece.getClass().getSimpleName())){
+						existe = true;
+						if (piece.getX() != -1) {
+							pieceIHM.add (new Coord (piece.getX (), piece.getY () ));
+							}
+					}
+				}
+				// sinon, création d'une nouvelle PieceIHM si la pièce est toujours en jeu
+				if (! existe) {
+						if (piece.getX () != -1) {
+							newPieceIHM = new PieceIHM(piece.getClass().getSimpleName() , piece.getCouleur()) ;
+							newPieceIHM.add (new Coord(piece.getX(), piece.getY()));
+							list.add (newPieceIHM);
+						}
+					}
+				}
+			return list;
 	}
 	
 	
