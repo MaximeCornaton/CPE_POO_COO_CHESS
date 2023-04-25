@@ -9,12 +9,12 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces  
 	private Coord coord;
 	private Couleur couleur;
 	
-	public AbstractPiece(Couleur couleur, Coord coord) {
+	protected AbstractPiece(Couleur couleur, Coord coord) {
 		this.coord = coord;
 		this.couleur = couleur;
 	}
 
-	public AbstractPiece(Couleur couleur) {
+	protected AbstractPiece(Couleur couleur) {
 		this(couleur, new Coord(0,0));
 		
 	}
