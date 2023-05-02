@@ -14,13 +14,14 @@ public class Jeu {
 	
 	private Couleur couleur;
 	private List<Pieces> pieces;
-	private 
+	private boolean castling;
+	private boolean possibleCapture;
 	
 	/**
 	 * Le constructeur de jeu fait appel à la fabrique de pièces
 	 * @param color
 	 */
-	protected Jeu(Couleur couleur) {
+	public Jeu(Couleur couleur) {
 		this.couleur = couleur;
 		this.pieces = tools.ChessPiecesFactory.newPieces(couleur);
 	}
@@ -105,7 +106,7 @@ public class Jeu {
 	 * Si une capture d'une pièce de l'autre jeu est possible met à jour 1 booléen
 	 */
 	protected void setPossibleCapture() {
-		//TODO
+		if()
 		
 	}
 	
@@ -194,8 +195,7 @@ public class Jeu {
 	 * met à jour un booléen pour activer l'hypothèse d'un roque du roi
 	 */
 	protected void setCastling() {
-		//TODO
-		
+		this.castling = !this.castling;
 	}
 	
 	/*
@@ -221,7 +221,11 @@ public class Jeu {
 	 * @return true si on est bien dans le cas d'une promotion du pion
 	 */
 	protected boolean isPawnPromotion(int xFinal, int yfinal) {
-		//TODO
+		boolean promotion = false;
+		if (this.getPieceType(xFinal, yfinal).equals("Pion")) {
+			promotion = true;
+		}
+		return promotion;
 	}
 
 	
@@ -233,8 +237,14 @@ public class Jeu {
 	 * @param type = type de Pieces dans lequel le pion est promu
 	 * @return true si promotion OK
 	 */
-	protected boolean pawnPromotion(int xFinal, int yfinal, String type) {
-		
+	protected boolean pawnPromotion(int xFinal, int yFinal, String type) {
+		boolean promotion = false;
+		if (isPawnPromotion(xFinal, yFinal)) {
+			if (!type.equals("Roi") && !type.equals("Pion")) {
+				promotion = true;
+			}
+		}
+		return promotion;
 	}
 	
 	
@@ -243,7 +253,16 @@ public class Jeu {
 	 * @return coordonnées du roi
 	 */
 	protected Coord getKingCoord() {
-		
+		Coord coord = new Coord(0,0);
+		for (Pieces piece : pieces) {
+			int x = piece.getX();
+			int y = piece.getY();
+			if (this.getPieceType(x, y).equals("Roi")){
+				 coord.x = x;
+				 coord.y = y;
+			}
+		}
+		return coord;
 	}
 	
 	
