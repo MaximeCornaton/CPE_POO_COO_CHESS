@@ -99,7 +99,7 @@ public class Echiquier implements BoardGames{
 	}
 	@Override
 	public String toString() {
-		return "Echiquier courant=" + this.courant.getCouleur() +"//"+ this.non_courant.getCouleur() + ", msg=" + this.msg;
+		return "Echiquier | Courant : " + this.courant.getCouleur() + " | msg : " + this.msg;
 	}
 	
 	public static void main(String[] args) {
