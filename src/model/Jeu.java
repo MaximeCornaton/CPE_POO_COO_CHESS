@@ -154,7 +154,7 @@ public class Jeu {
 	 * @return couleur du jeu
 	 */
 	protected Couleur getCouleur() {
-		return Couleur.BLANC;
+		return this.couleur;
 	}
 	
 	

@@ -52,9 +52,14 @@ public class Echiquier implements BoardGames{
 	}
 	
 	public void switchJoueur() {
-		Jeu tmp = this.non_courant;
-		this.non_courant = this.courant;
-		this.courant = tmp;
+		if(this.courant.getCouleur() == Couleur.NOIR) {
+			this.courant = this.blanc;
+			this.non_courant = this.noir;
+		}
+		else {
+			this.courant = this.noir;
+			this.non_courant = this.blanc;
+		}
 	}
 
 	@Override
@@ -94,7 +99,7 @@ public class Echiquier implements BoardGames{
 	}
 	@Override
 	public String toString() {
-		return "Echiquier courant=" + courant + ", msg=" + msg;
+		return "Echiquier courant=" + this.courant.getCouleur() +"//"+ this.non_courant.getCouleur() + ", msg=" + this.msg;
 	}
 	
 	public static void main(String[] args) {
