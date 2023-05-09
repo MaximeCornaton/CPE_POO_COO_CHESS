@@ -105,8 +105,8 @@ public class Jeu {
 	/**
 	 * Si une capture d'une pièce de l'autre jeu est possible met à jour 1 booléen
 	 */
-	protected void setPossibleCapture() {
-		if()
+	protected void setPossibleCapture(boolean PossibleCapture) {
+		this.possibleCapture = PossibleCapture;
 		
 	}
 	
