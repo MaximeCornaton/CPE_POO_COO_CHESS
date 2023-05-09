@@ -1,13 +1,14 @@
 package vue;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.util.List;
 import javax.swing.*;
 
 import model.Coord;
 import model.Couleur;
 import model.Echiquier;
 import model.PieceIHM;
+import tools.ChessImageProvider;
 
 public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.MouseListener, java.awt.event.MouseMotionListener{
 	  JLayeredPane layeredPane;
@@ -53,30 +54,49 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 		  for(PieceIHM piece : ech.getPieceIHM()) {
 			  String type = piece.getTypePiece();
 			  Couleur couleur = piece.getCouleur();
-			  List<Coord> coord = piece.getList();
+			  List<Coord> coordlist = piece.getList();
 			  
+			  
+			  for(Coord coord : coordlist) {
+				  int pos = 0;
+				  
+				  
+				  JLabel p = new JLabel(new ImageIcon(ChessImageProvider.getImageFile(type, couleur)));
+				  if(couleur == Couleur.BLANC) {
+					  pos += 7-coord.x;
+					  pos += coord.y*8;
+					  JPanel panel = (JPanel)chessBoard.getComponent(pos);
+					  panel.add(p);
+				  }
+				  if(couleur == Couleur.NOIR) {
+					  pos += coord.x;
+					  pos += coord.y*8;
+					  JPanel panel = (JPanel)chessBoard.getComponent(pos);
+					  panel.add(p);
+				  }
+				  
+				
+				  
+			  }
 			  
 		  }
 		 
-		  JLabel piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
-		  JPanel panel = (JPanel)chessBoard.getComponent(0);
-		  panel.add(piece);
-		  
-		  piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
-		  panel = (JPanel)chessBoard.getComponent(15);
-		  panel.add(piece);
-		  
-		  piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
-		  panel = (JPanel)chessBoard.getComponent(16);
-		  panel.add(piece);
-		  
-		  piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
-		  panel = (JPanel)chessBoard.getComponent(20);
-		  panel.add(piece);
-		  
-		  piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
-		  panel = (JPanel)chessBoard.getComponent(63);
-		  panel.add(piece);
+			/*
+			 * JLabel piece = new JLabel(new ImageIcon("images/pionBlancS.png")); JPanel
+			 * panel = (JPanel)chessBoard.getComponent(0); panel.add(piece);
+			 * 
+			 * piece = new JLabel(new ImageIcon("images/pionBlancS.png")); panel =
+			 * (JPanel)chessBoard.getComponent(15); panel.add(piece);
+			 * 
+			 * piece = new JLabel(new ImageIcon("images/pionBlancS.png")); panel =
+			 * (JPanel)chessBoard.getComponent(16); panel.add(piece);
+			 * 
+			 * piece = new JLabel(new ImageIcon("images/pionBlancS.png")); panel =
+			 * (JPanel)chessBoard.getComponent(20); panel.add(piece);
+			 * 
+			 * piece = new JLabel(new ImageIcon("images/pionBlancS.png")); panel =
+			 * (JPanel)chessBoard.getComponent(63); panel.add(piece);
+			 */
 
 	  }
 	 
