@@ -3,7 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+
+import model.Coord;
+import model.Couleur;
 import model.Echiquier;
+import model.PieceIHM;
 
 public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.MouseListener, java.awt.event.MouseMotionListener{
 	  JLayeredPane layeredPane;
@@ -46,7 +50,13 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 		  
 		  Echiquier ech = new Echiquier();
 		  
-		  for()
+		  for(PieceIHM piece : ech.getPieceIHM()) {
+			  String type = piece.getTypePiece();
+			  Couleur couleur = piece.getCouleur();
+			  List<Coord> coord = piece.getList();
+			  
+			  
+		  }
 		 
 		  JLabel piece = new JLabel(new ImageIcon("images/pionBlancS.png"));
 		  JPanel panel = (JPanel)chessBoard.getComponent(0);
