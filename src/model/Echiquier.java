@@ -1,5 +1,7 @@
 package model;
 
+import java.util.*;
+
 public class Echiquier implements BoardGames{
 	private Jeu noir;
 	private Jeu blanc;
@@ -8,7 +10,7 @@ public class Echiquier implements BoardGames{
 	private String msg;
 	
 	
-	protected Echiquier() {
+	public Echiquier() {
 		this.blanc = new Jeu(Couleur.BLANC);
 		this.noir = new Jeu(Couleur.NOIR);
 		this.courant = this.blanc;
@@ -75,6 +77,13 @@ public class Echiquier implements BoardGames{
 		
 		return false;
 	}
+	
+	public List<PieceIHM> getPieceIHM(){
+		List<PieceIHM> piecesIHM = new LinkedList<PieceIHM>();
+		piecesIHM.addAll(this.blanc.getPiecesIHM());
+		piecesIHM.addAll(this.noir.getPiecesIHM());
+		return piecesIHM;
+	}
 
 	@Override
 	public boolean isEnd() {
@@ -106,9 +115,9 @@ public class Echiquier implements BoardGames{
 		
 		Echiquier e = new Echiquier();
 		
-		System.out.println(e);
-		e.switchJoueur();
-		System.out.println(e);
+		
+		System.out.println(e.getPieceIHM());
+		
 		
 	}
 	
