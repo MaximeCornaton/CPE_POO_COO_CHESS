@@ -26,7 +26,7 @@ public class Echiquier implements BoardGames{
 	 * @param yFinal
 	 * @return Permet de vérifier si une pièce peut être déplacé
 	 */
-	private boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
+	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
 		boolean res = true;
 		
 		// Bonne exemple SRP
