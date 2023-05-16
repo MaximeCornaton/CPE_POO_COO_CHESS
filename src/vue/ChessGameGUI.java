@@ -20,8 +20,10 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 	  JLabel chessPiece;
 	  int xAdjustment;
 	  int yAdjustment;
+	  ChessGameControlers chessGameControler;
 	 
 	  public ChessGameGUI(String string, ChessGameControlers chessGameControler, Dimension dim){
+		  this.chessGameControler = chessGameControler;
 		  Dimension boardSize = new Dimension(600, 600);
 		 
 		  //  Use a Layered Pane for this this application
@@ -32,7 +34,6 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 		  layeredPane.addMouseMotionListener(this);
 	
 		  //Add a chess board to the Layered Pane 
-		 
 		  chessBoard = new JPanel();
 		  layeredPane.add(chessBoard, JLayeredPane.DEFAULT_LAYER);
 		  chessBoard.setLayout( new GridLayout(8, 8) );
@@ -62,8 +63,10 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 		  chessPiece = null;
 		  Component c =  chessBoard.findComponentAt(e.getX(), e.getY());
 		 
-		  if (c instanceof JPanel) 
+		  if (c instanceof JPanel && !chessGameControler.isPlayerOK(new Coord(e.getX(), e.getY())))
 			  return;
+		  
+		  System.out.print(chessGameControler.isPlayerOK(new Coord(e.getX(), e.getY())));
 		 
 		  Point parentLocation = c.getParent().getLocation();
 		  xAdjustment = parentLocation.x - e.getX();

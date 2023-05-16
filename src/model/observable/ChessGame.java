@@ -97,7 +97,7 @@ public class ChessGame extends Observable implements BoardGames{
 	@Override
 	public void	notifyObservers(Object arg) {
 		super.setChanged();
-		super.notifyObservers(arg); 
+		super.notifyObservers(arg);
 	}
 
 	/* (non-Javadoc)
