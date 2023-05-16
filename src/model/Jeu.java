@@ -130,11 +130,11 @@ public class Jeu {
 	 * @return couleur de la pièce aux coordonnées x, y
 	 */
 	protected Couleur getPieceColor(int x, int y) {
-		Couleur couleur = Couleur.NOIRBLANC;
-		//TODO
+		Pieces p = this.findPiece(x, y);
+		Couleur color = p.getCouleur();
 		
-		
-		return couleur;
+		return color;
+	
 	}
 	
 	
