@@ -1,6 +1,8 @@
 package controler.controlerLocal;
 
 import model.Coord;
+import model.Couleur;
+import model.Echiquier;
 import model.observable.ChessGame;
 import controler.AbstractChessGameControler;
 
@@ -26,7 +28,18 @@ public class ChessGameControler extends AbstractChessGameControler {
 	 */
 	@Override
 	public boolean isPlayerOK(Coord initCoord) {
-		return false;
+		System.out.println("cacaboudin");
+		boolean res = false;
+		Couleur courant = this.getColorCurrentPlayer();
+		
+		Couleur piececolor = this.getPieceColor(initCoord);
+		
+		if (courant.equals(piececolor)){
+			System.out.println("proutprout");
+			res = true;
+		}
+		
+		return res;
 		// ToDo
 	}
 	
