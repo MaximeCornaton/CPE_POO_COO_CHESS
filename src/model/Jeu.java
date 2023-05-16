@@ -131,6 +131,9 @@ public class Jeu {
 	 */
 	protected Couleur getPieceColor(int x, int y) {
 		Pieces p = this.findPiece(x, y);
+		if ( p == null) {
+			return null;
+		}
 		Couleur color = p.getCouleur();
 		
 		return color;
