@@ -34,15 +34,12 @@ public class ChessGameControler extends AbstractChessGameControler {
 		initCoord.x = initCoord.x/(600/8);
 		initCoord.y = initCoord.y/(600/8);
 		
-		System.out.println(initCoord);
 		
 		Couleur piececolor = this.getPieceColor(initCoord);
 		
 		
-		System.out.println(courant + " " + piececolor );
 		
 		if (courant.equals(piececolor)){
-			System.out.println("proutprout");
 			res = true;
 		}
 		

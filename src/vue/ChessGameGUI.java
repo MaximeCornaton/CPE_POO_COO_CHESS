@@ -63,10 +63,10 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 		  chessPiece = null;
 		  Component c =  chessBoard.findComponentAt(e.getX(), e.getY());
 		 
-		  if (c instanceof JPanel && !chessGameControler.isPlayerOK(new Coord(e.getX(), e.getY())))
+		  if (c instanceof JPanel )
 			  return;
 		  
-		  System.out.print(chessGameControler.isPlayerOK(new Coord(e.getX(), e.getY())));
+		  //chessGameControler.isPlayerOK(new Coord(e.getX(), e.getY()))
 		 
 		  Point parentLocation = c.getParent().getLocation();
 		  xAdjustment = parentLocation.x - e.getX();
