@@ -30,7 +30,7 @@ public class ChessGame extends Observable implements BoardGames{
 	public ChessGame() {
 		super();
 		this.echiquier = new Echiquier();
-		this.notifyObservers(echiquier.getPieceIHM()); 
+		//this.notifyObservers(echiquier.getPieceIHM()); 
 	}
 
 
